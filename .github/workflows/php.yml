@@ -1,0 +1,22 @@
+name: PHP Composer
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install automattic/vipwpcs dealerdirect/phpcodesniffer-composer-installer --prefer-dist --no-progress --no-suggest
+    
+    - name: Run PHPCS
+      run: |
+        vendor/bin/phpcs --config-set ignore_warnings_on_exit 1
+        vendor/bin/phpcs --standard=WordPress-VIP-Go -sp --basepath=. --ignore=vendor *.php
