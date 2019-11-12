@@ -26,7 +26,8 @@ jobs:
       # Configure build steps
       - run:
         name: 'Install vip-go-ci'
-        command: wget https://raw.githubusercontent.com/Automattic/vip-go-ci/master/tools-init.sh -O tools-init.sh && bash tools-init.sh && rm -f tools-init.sh
+        command: |
+          wget https://raw.githubusercontent.com/Automattic/vip-go-ci/master/tools-init.sh -O tools-init.sh && bash tools-init.sh && rm -f tools-init.sh
 
       - run: 'ls -la'
 
