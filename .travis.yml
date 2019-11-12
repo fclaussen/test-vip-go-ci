@@ -26,10 +26,7 @@ before_install:
 script: 
 - bash tools-init.sh
 - rm -f tools-init.sh
-- cd ~/vip-go-ci-tools
-- ls -la
-- pwd
-- ./vip-go-ci.php --repo-owner=fclaussen --repo-name=test-vip-go-ci --commit=$TRAVIS_COMMIT --token=32800bd2199e9a68f89b4e7c2985a7c70f5d4fb9 --phpcs-path=$HOME/vip-go-ci-tools/phpcs/bin/phpcs --phpcs=true --lint=true
+- ~/vip-go-ci-tools/vip-go-ci/vip-go-ci.php --repo-owner=fclaussen --repo-name=test-vip-go-ci --commit=$TRAVIS_COMMIT --token=32800bd2199e9a68f89b4e7c2985a7c70f5d4fb9 --phpcs-path=$HOME/vip-go-ci-tools/phpcs/bin/phpcs --phpcs=true --lint=true
 
 # If you want to only run the deploy script when tests pass,
 # use `after_success` instead, you will need to add a `script`
