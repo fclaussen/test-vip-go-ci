@@ -10,9 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate
-
     - name: Install dependencies
       run: composer install automattic/vipwpcs dealerdirect/phpcodesniffer-composer-installer --prefer-dist --no-progress --no-suggest
     
