@@ -1,4 +1,4 @@
 <?php
 
 // foo is equal to bar
-$foo = "bar";
+$foo = $_POST['bar'];
