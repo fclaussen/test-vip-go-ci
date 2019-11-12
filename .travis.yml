@@ -9,7 +9,7 @@ sudo: false
 if: branch =~ ^.*(?<!-built)$
 
 before_install: 
-- wget https://raw.githubusercontent.com/Automattic/vip-go-ci/master/tools-init.sh -O tools-init.sh && bash tools-init.sh && rm -f tools-init.sh
+- wget https://raw.githubusercontent.com/Automattic/vip-go-ci/master/tools-init.sh -O tools-init.sh 
 
 # @TODO: Configure build steps
 # before_script:
@@ -20,6 +20,8 @@ before_install:
 # Replace this with whatever tests you wish, or leave in place if
 # you only want to run the deploy.
 script: 
+- bash tools-init.sh
+- rm -f tools-init.sh
 - cd ~/vip-go-ci-tools
 - ls -la
 
