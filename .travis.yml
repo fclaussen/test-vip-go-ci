@@ -1,6 +1,6 @@
 language: php
 
-sudo: false
+sudo: true
 
 env:
   - REPO_OWNER: $(dirname $TRAVIS_REPO_SLUG)
